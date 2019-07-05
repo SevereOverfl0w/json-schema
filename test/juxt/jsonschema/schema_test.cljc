@@ -3,7 +3,6 @@
    [clojure.test :refer [deftest is are testing]]
    [juxt.jsonschema.schema :as schema]
    #?(:cljs
-      [cljs.test :refer-macros [deftest is testing run-tests]]
       [cljs.core :refer [ExceptionInfo]]))
   #?(:clj
      (:import
