@@ -6,7 +6,7 @@
    [juxt.jsonschema.core :refer [number? integer? array? object? schema? regex?]]
    [lambdaisland.uri :refer [join]]
    #?(:cljs [cljs.core :refer [ExceptionInfo]]))
-   #?(:clj  (:import (clojure.lang ExceptionInfo))))
+   #?(:clj (:import (clojure.lang ExceptionInfo))))
 
 (defn- with-base-uri-meta
   "For each $id in the schema, add metadata to indicate the base-uri."
