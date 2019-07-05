@@ -1,22 +1,15 @@
 ;; Copyright © 2019, JUXT LTD.
 
 (ns juxt.jsonschema.resolve-test
-  #?@(:clj [(:require
-             [juxt.jsonschema.resolve :refer [resolve-uri]]
-             [clojure.string :as str]
-             [cheshire.core :as cheshire]
-             [clojure.java.io :as io]
-             [lambdaisland.uri :as uri]
-             [clojure.test :refer [deftest is are testing]])]
-      :cljs [(:require
-              [juxt.jsonschema.resolve :refer [resolve-uri]]
-              [clojure.string :as str]
-              [cljs-node-io.file :refer [File]]
-              [lambdaisland.uri :as uri]
-              [cljs.test :refer-macros [deftest is are testing run-tests]])
-             (:import goog.Uri)
-             
-             ]))
+  (:require
+    [juxt.jsonschema.resolve :refer [resolve-uri]]
+    [clojure.string :as str]
+    [lambdaisland.uri :as uri]
+    [clojure.test :refer [deftest is are testing]]
+    #?@(:clj [[cheshire.core :as cheshire]
+              [clojure.java.io :as io]]
+        :cljs [[cljs-node-io.file :refer [File]]]))
+  #?(:cljs (:import goog.Uri)))
 
 (comment
   :resolvers [[:juxt.jsonschema.resolve/default-resolver {"http://example.com/foo" (io/resource "schemas/json-schema.org/draft-07/schema")}]
